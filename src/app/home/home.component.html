@@ -1,0 +1,34 @@
+<h3 class="py-5 text-center my-5">Hello in products of Fashion Page . . . </h3>
+
+<div class="container">
+    <div class="row bgImage my-3">
+        <div class="col-md-12  childBgImage">
+            <div>
+                <owl-carousel-o [options]="customOptions" >
+                    <ng-container *ngFor="let slide of list">
+                    <ng-template carouselSlide [id]="slide.id">
+                        <img [src]="slide.image" [alt]="slide.alt" [title]="slide.title" class="rounded-3  ">
+                        <h3>{{slide.title.slice(0,11)}}</h3>
+                    </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="container py-5">
+          <div class="row">
+              <div *ngFor="let products of getProduct" class="col-md-3 position-relative py-3">
+                      <a [routerLink]='["/productdetails" , products.id]'>
+                          <img [src]="products.image" alt="" class="w-100">
+                          <h2 class="py-2">{{products.title}}</h2>
+                          <p class="py-2">{{products.description}}</p>
+                          <div class="rate rounded-end">
+                              <h3 class="text-center py-3">{{products.rating.rate}}</h3>
+                          </div>
+                      </a>
+              </div>
+          </div>
+  </div>
+

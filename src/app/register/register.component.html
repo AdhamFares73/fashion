@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="../../assets/images/536_gentleman_fashion_company-(cm)-3-.jpg" class="w-100 py-5 my-5">
+        </div>
+        <div class="col-md-8 shadow-lg p-4 rounded-3">
+            <p class="text-center fw-bolder">{{error}}</p>
+            <form [formGroup]="registerForm" (ngSubmit)="submitRegister(registerForm)">
+                <div class="form-group py-3">
+                    <label for="first_name">First Name :</label>
+                    <input type="text" formControlName="first_name" class="form-control" id="first_name">
+                    <div *ngIf="registerForm.get('first_name')?.errors != null && registerForm.get('first_name')?.touched" class="alert my-3">
+                        <p>firstName is Required</p>
+                        <p>firstName is minLength 3</p>
+                        <p>firstName is maxLength 10</p>
+                    </div>
+                </div>
+                <div class="form-group py-3">
+                    <label for="last_name">Last Name :</label>
+                    <input type="text" formControlName="last_name" class="form-control" id="last_name">
+                    <div *ngIf="registerForm.get('last_name')?.errors != null && registerForm.get('last_name')?.touched" class="alert my-3">
+                        <p>Last name is Required</p>
+                        <p>Last name is minLength 3</p>
+                        <p>Last name is maxLength 10</p>
+                    </div>
+                </div>
+                <div class="form-group py-3">
+                    <label for="email">Email:</label>
+                    <input type="email"formControlName="email" class="form-control" id="email">
+                    <div *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched" class="alert my-1">
+                        <p>Email is Required</p>
+                        <p>Email must include @ </p>
+                    </div>
+                </div>
+                <div class="form-group py-3">
+                    <label for="password">Password :</label>
+                    <input type="password" formControlName="password" class="form-control" id="password">
+                    <div *ngIf="registerForm.get('password')?.errors != null && registerForm.get('password')?.touched" class="alert my-1">
+                        <p>Password is Required</p>
+                    </div>
+                </div>
+                <div class="form-group py-3">
+                    <label for="age">Age :</label>
+                    <input type="text" formControlName="age" class="form-control" id="age">
+                    <div *ngIf="registerForm.get('age')?.errors != null && registerForm.get('age')?.touched" class="alert my-1">
+                        <p>Age is Required</p>
+                        <p>Age Must be between 18-50</p>
+                    </div>
+                </div>
+                <button [disabled]="registerForm.invalid" type="submit" class="btn btn-info">Register</button>
+        
+            </form>
+        </div>
+    </div>
+    
+</div>

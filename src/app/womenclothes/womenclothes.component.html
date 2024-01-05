@@ -1,0 +1,24 @@
+<div class="container">
+    <!--     
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#a8a8a83d" fill-opacity="0.5" d="M0,224L1440,320L1440,0L0,0Z"></path>
+    </svg> -->
+    <div class="row">
+        <h3 class="py-5 text-center my-5">Hello in products of Fashion Page . . . </h3>
+    </div>
+    <div class="container-fluid">
+    
+            <div class="row">
+                <div *ngFor="let products of womenClothes" class="col-md-3 position-relative py-3">
+                        <a [routerLink]='["/productdetails" , products.id]'>
+                            <img [src]="products.image" alt="" class="w-100">
+                            <h2 class="py-2">{{products.title}}</h2>
+                            <p class="py-2">{{products.description}}</p>
+                            <div class="rate rounded-end">
+                                <h3 class="text-center py-3">{{products.rating.rate}}</h3>
+                            </div>
+                        </a>
+                </div>
+            </div>
+    </div>
+    </div>

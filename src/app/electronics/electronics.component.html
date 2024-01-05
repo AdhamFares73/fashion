@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        
+            <h3 class="py-5 text-center my-5">Hello in products of Electronic Page . . . </h3>
+       
+    </div>
+    <div class="row">
+        <div *ngFor="let products of electronicData" class="col-md-4 position-relative py-3">
+            <a [routerLink]='["/productdetails" , products.id]'>
+                <img [src]="products.image" alt="" class="w-100">
+                <h2 class="py-2">{{products.title}}</h2>
+                <p class="py-2">{{products.description}}</p>
+                <div class="rate rounded-end">
+                    <h3 class="text-center py-3">{{products.rating.rate}}</h3>
+                </div>
+            </a>
+    </div>
+    </div>
+</div>

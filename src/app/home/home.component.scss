@@ -1,0 +1,34 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #26314e;
+  }
+  img{
+    height: 250px;
+  }
+  .bgImage{
+    height: 80vh;
+    position: relative;
+    background: url(../../assets/images/pexels-vic-b-bg.jpg) center center no-repeat;
+  }
+  .childBgImage{
+    position: absolute;
+    top: 200px;
+    right: 0;
+    
+  }
+  .font{
+      font-weight: 800;
+      font-size: 22px;
+  }
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
